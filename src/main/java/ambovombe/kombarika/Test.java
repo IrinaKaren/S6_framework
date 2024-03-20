@@ -7,7 +7,9 @@ package ambovombe.kombarika;
 import ambovombe.kombarika.generator.CodeGenerator;
 import ambovombe.kombarika.generator.service.DbService;
 
+import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.Scanner;
 /**
  *
  *  @author Mamisoa
@@ -21,16 +23,55 @@ public class Test {
      
     public static void main(String[] args) throws Exception {
         CodeGenerator codeGenerator = new CodeGenerator();  
-        String path = "Generated";
-        String viewPath = "Generated";
-        String framework = "java:karana";
-        String packageName = "search";
-        String entity = "model";
-        String controller = "controller";
-        String repository = "repository";
-        String view = "view";
-        String viewType = "react";
-        String url = "http://localhost:8080/";
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("1-) Write the path of your model and controller project:");
+        System.out.print("\t>> ");
+        String path = scanner.nextLine();
+
+        System.out.println("2-) Write the path of the view of your project:");
+        System.out.print("\t>> ");
+        String viewPath = scanner.nextLine();
+
+        System.out.println("3-) Choose your framework:\n\ta-) java:karana");
+        System.out.print("\t>> ");
+        String framework = scanner.nextLine();
+        if (framework.equals("a")) {
+            framework = "java:karana";
+        }
+
+        System.out.println("4-) Write your project package:");
+        System.out.print("\t>> ");
+        String packageName = scanner.nextLine();
+
+        System.out.println("5-) Write your entity package:");
+        System.out.print("\t>> ");
+        String entity = scanner.nextLine(); 
+
+        System.out.println("6-) Write your controller package:");
+        System.out.print("\t>> ");
+        String controller = scanner.nextLine();
+
+        System.out.println("7-) Write your repository package:");
+        System.out.print("\t>> ");
+        String repository = scanner.nextLine();
+
+        System.out.println("8-) Write your view package:");
+        System.out.print("\t>> ");
+        String view = scanner.nextLine();
+
+        System.out.println("9-) Choose your view type:\n\ta-)react");
+        System.out.print("\t>> ");
+        String viewType = scanner.nextLine();
+        if (viewType.equals("a")) {
+            viewType = "react";
+        }
+
+        System.out.println("10-) Write your API URL:");
+        System.out.print("\t>> ");
+        String url = scanner.nextLine();
+
+        System.out.println(path + " " + viewPath + " " + framework + " " + packageName + " " + controller + " " + repository + " " + view + " " + viewType + " " + url);
         try{
             // String[] tables = {"district","region"};
             // DbConnection dbConnection = codeGenerator.getDbConnection();
