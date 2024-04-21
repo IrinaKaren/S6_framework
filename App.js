@@ -11,12 +11,22 @@ import Login from "./components/Login";
 import{BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 function App() {
   return (
-      <Router>
+      <Router>        
         <Routes>
+            {sessionStorage.getItem("session") ? (
+          <>
+            <Route path="/test" element={<Test />} />
+            <Route path="/joueur" element={<Joueur />} />
+          </>
+        ) : (
+          <Route path="/*" element={<Login />} />
+        )}
+      </Routes>
+        {/* <Routes>
           {sessionStorage.getItem("session") ? <Route path="/test" element={<Test/>}></Route> : <Route path="/login" element={<Login/>}></Route> }
           {sessionStorage.getItem("session") ? <Route path="/joueur" element={<Joueur/>}></Route>: <Route path="/login" element={<Login/>}></Route>}
           <Route path="/login" element={<Login/>}></Route>
-        </Routes>
+        </Routes> */}
       </Router>
       
   );
