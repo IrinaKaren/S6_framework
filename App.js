@@ -22,11 +22,8 @@ function App() {
           <Route path="/*" element={<Login />} />
         )}
       </Routes>
-        {/* <Routes>
-          {sessionStorage.getItem("session") ? <Route path="/test" element={<Test/>}></Route> : <Route path="/login" element={<Login/>}></Route> }
-          {sessionStorage.getItem("session") ? <Route path="/joueur" element={<Joueur/>}></Route>: <Route path="/login" element={<Login/>}></Route>}
-          <Route path="/login" element={<Login/>}></Route>
-        </Routes> */}
+          // <Route path="/test" element={<Test/>}></Route>
+          // <Route path="/joueur" element={<Joueur/>}></Route>
       </Router>
       
   );
