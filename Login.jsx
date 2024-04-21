@@ -12,7 +12,7 @@ function Login(){
             data[key] = value;
         }  
 
-        sessionStorage.setItem('user', JSON.stringify(data));
+        sessionStorage.setItem('session', JSON.stringify(data));
     };
 
     
